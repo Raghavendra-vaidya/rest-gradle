@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.rv'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.5'
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+    }
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
