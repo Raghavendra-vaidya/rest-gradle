@@ -11,13 +11,11 @@ repositories {
 
 dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.5'
-    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
-    // https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator
-    testImplementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.4.0'
-    // https://mvnrepository.com/artifact/io.rest-assured/json-path
-    testImplementation group: 'io.rest-assured', name: 'json-path', version: '4.4.0'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
 
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+    testImplementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.4.0'
+    testImplementation group: 'io.rest-assured', name: 'json-path', version: '4.4.0'
 }
 
 test {
