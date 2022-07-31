@@ -18,7 +18,6 @@ public class Pets {
                 given()
                         .log().ifValidationFails()
                         .header("Content-Type", "application/json")
-                        .accept("*/*")
                         .body(body)
                 .when()
                         .post(endPoint)

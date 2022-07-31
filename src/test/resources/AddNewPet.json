@@ -2,16 +2,16 @@
   "id": 0,
   "category": {
     "id": 0,
-    "name": "string"
+    "name": "Cat family"
   },
-  "name": "doggie",
+  "name": "Booom pets",
   "photoUrls": [
-    "string"
+    "https://i.picsum.photos/id/357/200/200.jpg?hmac=hHhE00vBpBPSjAiUhwzFKQi9PsCWu7sblLKC2rT6Fn8"
   ],
   "tags": [
     {
       "id": 0,
-      "name": "string"
+      "name": "tag1"
     }
   ],
   "status": "available"
