@@ -1,2 +1,2 @@
 # rest-gradle
-Rest api automation using restAssured.io and gradle
+Rest api automation using rest-assured.io and gradle
