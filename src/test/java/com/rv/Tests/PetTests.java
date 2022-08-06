@@ -18,4 +18,18 @@ public class PetTests {
         Assert.assertEquals(Astatus, "available");
     }
 
+    @Test(description = "get pet by id and verify")
+    public void getPetByID(){
+        String requestBody = Helpers.formSampleCreatePetReqBody();
+        Response apiResponse = Pets.addPet(requestBody, 200);
+        String petID = apiResponse.jsonPath().get("id").toString();
+        Response response = Pets.getPetById(petID,200);
+        System.out.println(response.body().asString());
+        Assert.assertEquals(response.jsonPath().get("id").toString(), petID);
+    }
+
+    @Test(description = "This excluded", groups = {"defect"})
+    public void boomTest(){
+        Assert.assertTrue(true);
+    }
 }
