@@ -46,7 +46,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  API tests:
+  API tests JDK 8 Gradle:
     jobs:
       - Pets-api-tests
       - User-api-tests
