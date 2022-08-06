@@ -23,6 +23,7 @@ jobs:
       - run: 
           name: "Run tests"
           command: "gradle clean v1run"
+      
 
   User-api-tests:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
@@ -42,11 +43,18 @@ jobs:
       - run: 
           name: "Run tests"
           command: "gradle clean v2run"
+      
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   API tests JDK 8 Gradle:
     jobs:
-      - Pets-api-tests
-      - User-api-tests
+      - Pets-api-tests:
+          filters:
+            branches:
+              only: main
+      - User-api-tests:
+          filters:
+            branches:
+              only: main
