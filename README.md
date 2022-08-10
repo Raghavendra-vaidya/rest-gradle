@@ -1,5 +1,5 @@
 # rest-gradle
-Rest api automation using rest-assured.io and gradle
+Rest api automation using rest-assured.io
 
 
 ### CI Pipeline and jobs :
