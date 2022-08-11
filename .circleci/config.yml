@@ -28,7 +28,7 @@ jobs:
           command: |
             mkdir -p ~/test-results/petstore-api-tests/
             mkdir -p ~/test-output/
-            find . -type f -regex "~/build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
+            find . -type f -regex "/root/rest-gradle/build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
           when: always
       - store_test_results:
           path: ~/test-results
@@ -62,7 +62,7 @@ jobs:
           command: |
             mkdir -p ~/test-results/petstore-api-tests/
             mkdir -p ~/test-output/
-            find . -type f -regex "~/build/reports/tests/v2run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
+            find . -type f -regex "/root/rest-gradle/build/reports/tests/v2run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
           when: always
       - store_test_results:
           path: ~/test-results
