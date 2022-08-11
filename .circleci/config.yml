@@ -24,16 +24,8 @@ jobs:
           name: "Run tests"
           command: "gradle clean v1run"
       - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/test-results/petstore-api-tests/
-            mkdir -p ~/test-output/
-            find . -type f -regex "/root/rest-gradle/build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
-          when: always
-      - store_test_results:
-          path: ~/test-results
-      - store_artifacts:
-          path: ~/test-output
+          name: "working dir"
+          command: "pwd"
       
 
   User-api-tests:
