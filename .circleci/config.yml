@@ -58,14 +58,15 @@ jobs:
           name: Save test results
           command: |
             mkdir -p ~/test-results/petstore-api-tests/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/petstore-api-tests/ \
-            find . -type f -regex ".*/build/test-results/.*html" -exec cp {} ~/test-results/petstore-api-tests/ \
+            mkdir -p ~/test-output/
+            find . -type f -regex "./build/reports/tests/*" -exec cp {} ~/test-output/ \;
           when: always
       - store_test_results:
           path: ~/test-results/
+          when: always
       - store_artifacts:
           path: ~/test-output
-      
+          when: always
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
