@@ -28,7 +28,7 @@ jobs:
           command: |
             mkdir -p ~/test-results/petstore-api-tests/
             mkdir -p ~/test-output/
-            find . -type f -regex "./build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
+            find . -type f -regex "~/build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
           when: always
       - store_test_results:
           path: ~/test-results
@@ -62,7 +62,7 @@ jobs:
           command: |
             mkdir -p ~/test-results/petstore-api-tests/
             mkdir -p ~/test-output/
-            find . -type f -regex "/build/reports/tests/v2run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
+            find . -type f -regex "~/build/reports/tests/v2run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
           when: always
       - store_test_results:
           path: ~/test-results
@@ -75,11 +75,5 @@ jobs:
 workflows:
   API tests JDK 8 Gradle:
     jobs:
-      - Pets-api-tests:
-          filters:
-            branches:
-              only: main
-      - User-api-tests:
-          filters:
-            branches:
-              only: main
+      - Pets-api-tests
+      - User-api-tests
