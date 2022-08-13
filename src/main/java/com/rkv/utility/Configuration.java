@@ -11,6 +11,8 @@ public class Configuration {
 
     public String findByStatus;
 
+    public String user_ep;
+
     public Configuration() {
         Properties propApi = new Properties();
         Properties propConfig = new Properties();
@@ -21,6 +23,7 @@ public class Configuration {
             this.pets_ep = propApi.getProperty("PET");
             this.findByStatus = propApi.getProperty("PET_BY_STATUS");
             this.pets_image_ep = propApi.getProperty("UPLOAD_IMAGE");
+            this.user_ep = propApi.getProperty("USER");
 
         } catch (Exception e) { e.printStackTrace();}
     }
