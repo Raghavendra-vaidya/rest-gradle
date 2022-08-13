@@ -1,6 +1,8 @@
 package com.rv.Testhelpers;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.rkv.utility.JsonUtils;
 
 import java.util.Calendar;
@@ -19,5 +21,30 @@ public class Helpers {
         reqObj.addProperty("status",status);
         return reqObj.toString();
     }
+    public static String formSampleCreateUserReqBody(){
+        JsonObject reqObj = JsonUtils.getJsonFileAsJsonObject("src/test/resources/createUser.json");
+
+        String name = "Hardy"+ Calendar.getInstance().getTimeInMillis();
+        reqObj.addProperty("username",name);
+        reqObj.addProperty("firstName",name);
+        reqObj.addProperty("lastName","jigg");
+        reqObj.addProperty("email",name+"@test.com");
+        reqObj.addProperty("password","pass");
+        return reqObj.toString();
+    }
+
+    public static JsonObject sampleUserReqBodyObject(){
+        JsonObject reqObj = JsonUtils.getJsonFileAsJsonObject("src/test/resources/createUser.json");
+
+        String name= "Hardy"+Calendar.getInstance().getTimeInMillis();
+        reqObj.addProperty("username",name);
+        reqObj.addProperty("firstName",name);
+        reqObj.addProperty("lastName","jigg");
+        reqObj.addProperty("email",name+"@test.com");
+        reqObj.addProperty("password","pass");
+        return reqObj;
+    }
+
+
 
 }
