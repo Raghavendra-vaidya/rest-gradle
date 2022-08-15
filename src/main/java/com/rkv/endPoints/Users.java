@@ -42,4 +42,19 @@ public class Users {
 
         return response;
     }
+    public static Response deleteUserByUsername(String username, int statusCode){
+        RestAssured.baseURI = config.base_uri;
+        String endpoint = RestAssured.baseURI+config.user_ep+"/"+username;
+
+        Response response =
+                given()
+                        .log().ifValidationFails()
+                        .header("Content-Type","application/json")
+                .when()
+                        .delete(endpoint)
+                .then()
+                        .assertThat().statusCode(statusCode).extract().response();
+
+        return response;
+    }
 }

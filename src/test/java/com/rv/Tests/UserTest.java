@@ -30,8 +30,26 @@ public class UserTest {
         Assert.assertEquals(userNameActual,username);
     }
 
-    @Test(description = "delete user and verify", groups ={"defect"})
+    @Test(description = "delete user and verify")
     public void deleteUser(){
+        JsonObject reqBody =  Helpers.sampleUserReqBodyObject();
+        String username1 = reqBody.get("username").toString();
+        String username = username1.replace("\"","");
+
+        Response apiResponse = Users.createUser(reqBody.toString(), 200);
+
+        Response deleteResponse = Users.deleteUserByUsername(username, 200);
+        String deletedUsername = deleteResponse.jsonPath().get("message").toString();
+        String deledtedUser = deletedUsername.replace("\"","");
+        Response userRespone  = Users.getUserByUsername(deledtedUser, 404);
+
+        Assert.assertEquals(userRespone.jsonPath().get("message").toString(), "User not found");
+    }
+
+
+
+    @Test(description = "update user and verify", groups ={"defect"})
+    public void updateUser(){
         Assert.assertTrue(false);
     }
 }
