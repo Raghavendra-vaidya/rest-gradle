@@ -23,17 +23,9 @@ jobs:
       - run: 
           name: "Run tests"
           command: "gradle clean v1run"
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/test-results/petstore-api-tests/
-            mkdir -p ~/test-output/
-            find . -type f -regex "./build/reports/tests/v1run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
-          when: always
-      - store_test_results:
-          path: ~/test-results
+
       - store_artifacts:
-          path: ~/test-output
+          path: root/project/build/reports/tests/v2run/*
       
 
   User-api-tests:
@@ -54,20 +46,9 @@ jobs:
       - run: 
           name: "Run tests"
           command: "gradle clean v2run"
-      - run:
-          name: "list directory"
-          command: "ls"
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/test-results/petstore-api-tests/
-            mkdir -p ~/test-output/
-            find . -type f -regex "/build/reports/tests/v2run/emailable-report.html" -exec cp {} ~/test-results/petstore-api-tests/ \;
-          when: always
-      - store_test_results:
-          path: ~/test-results
+
       - store_artifacts:
-          path: ~/test-output
+          path: root/project/build/reports/tests/v2run/*
       
 
 # Invoke jobs via workflows
