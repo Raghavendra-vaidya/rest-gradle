@@ -25,7 +25,7 @@ jobs:
           command: "gradle clean v1run"
 
       - store_artifacts:
-          path: /root/project/build/reports/tests/v2run/*
+          path: /root/project/build/reports/tests/v2run/emailable-report.html
       
 
   User-api-tests:
@@ -48,7 +48,7 @@ jobs:
           command: "gradle clean v2run"
 
       - store_artifacts:
-          path: /root/project/build/reports/tests/v2run/*
+          path: /root/project/build/reports/tests/v2run/emailable-report.html
       
 
 # Invoke jobs via workflows
