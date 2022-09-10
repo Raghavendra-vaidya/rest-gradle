@@ -13,3 +13,6 @@ Rest api automation using rest-assured.io
 Storing results:
 
 <img width="1171" alt="image" src="https://user-images.githubusercontent.com/30006440/187114785-f0087989-e462-4c47-9696-b9f65360c0ea.png">
+
+---
+Reports:
