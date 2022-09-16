@@ -1,4 +1,4 @@
-# rest-gradle
+# rest-gradle :elephant:
 Rest api automation using rest-assured.io
 
 
