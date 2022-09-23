@@ -1,5 +1,5 @@
 # rest-gradle :elephant:
-Rest api automation using rest-assured.io
+Rest api automation using rest-assured.io.
 
 
 ### CI Pipeline and jobs :
